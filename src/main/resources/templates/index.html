@@ -46,7 +46,10 @@
                 <p>Generate New Password</p>
             </a>
             <br><br>
-            <p th:text="${password}"></p>
+            <input type="text" id="passwordField" th:value="${password}" class="">
+            <button class="btn btn-sm btn-primary" onclick="copyToClipboard()">
+                copy to clipboard
+            </button>
         </div>
     </div>
 </div>
@@ -96,7 +99,14 @@
 
 </script>
 
+
 <script>
+    function copyToClipboard() {
+        const copyText = document.getElementById("passwordField").value;
+        navigator.clipboard.writeText(copyText).then(() => {
+            alert("Copied to clipboard");
+        });
+    }
 
 </script>
 </body>
