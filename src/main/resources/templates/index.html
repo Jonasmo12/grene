@@ -44,21 +44,31 @@
 <div class="container pt-5">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <a href="" id="button" class="btn btn-lg btn-success"><h1>Generate Password</h1></a>
+
         </div>
     </div>
 </div>
 
-<div class="container pt-5">
+
+<div class="container pt-5 passwordContainer">
     <div class="row">
+
         <div class="col-lg-12 text-center">
-            <p id="password"></p>
+            <a href="" id="button" class="btn btn-lg btn-success">
+                <h4>Generate New Password</h4>
+            </a>
+            <br><br>
+            <p th:text="${password}"></p>
         </div>
     </div>
 </div>
 
 
-
+<style>
+    /*.passwordContainer {*/
+    /*    display: none;*/
+    /*}*/
+</style>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -68,18 +78,21 @@
 </script>
 
 <script>
-    var url = window.location.href;
-    console.log(url);
-
-    $(document).ready(function(){
-        $("#button").click(function(e){
-
-            $.get(url+"password", function(password){
-                $('#password').append(password);
-            });
-            e.preventDefault();
-        });
-    });
+    // const url = window.location.href;
+    // console.log(url);
+    //
+    // $(document).ready(function(){
+    //     $.ajax({
+    //         url: url+"password"
+    //     }).then(function(password) {
+    //
+    //         $('#password').append(password);
+    //     });
+    //     $("#button").click(function(e){
+    //         // e.preventDefault();
+    //         $( ".passwordContainer" ).attr( "style", "display:block !important" );
+    //     });
+    // });
 </script>
 </body>
 </html>
